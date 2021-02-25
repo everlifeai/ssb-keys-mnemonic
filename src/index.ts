@@ -26,9 +26,9 @@ exports.keysToWords = keysToWords;
 function wordsToKeys(words) {
     var wordArr = words.trim().split(/\s+/g);
     var amount = wordArr.length;
-    if (amount < 12  || amount > 12)
-        throw new Error('there should be 12 words');
-    const fixedWords = wordArr.slice(0, 12).join(' ');
+    if (amount < 24  || amount > 24)
+        throw new Error('there should be 24 words');
+    const fixedWords = wordArr.slice(0, 24).join(' ');
     if (!bip39.validateMnemonic(fixedWords))
         throw new Error('invalid words');
     var seed =  Buffer.from(bip39.mnemonicToEntropy(words));
